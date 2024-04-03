@@ -1,0 +1,74 @@
+{
+  "name": "mini-webrtc",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.15.6",
+  "description": "",
+  "author": "croatialu<wuli.croatia@foxmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/croatialu",
+  "homepage": "https://github.com/croatialu/mini-webrtc#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/croatialu/mini-webrtc.git"
+  },
+  "bugs": "https://github.com/croatialu/mini-webrtc/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepare": "simple-git-hooks"
+  },
+  "dependencies": {
+    "broadcast-channel": "^7.0.0",
+    "nanoid": "^5.0.6",
+    "simple-peer": "^9.11.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.12.1",
+    "@antfu/ni": "^0.21.12",
+    "@types/node": "^20.12.3",
+    "@types/simple-peer": "^9.11.8",
+    "bumpp": "^9.4.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-format": "^0.1.0",
+    "lint-staged": "^15.2.2",
+    "simple-git-hooks": "^2.11.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
