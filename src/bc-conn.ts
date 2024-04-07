@@ -1,7 +1,7 @@
 import type { LeaderElector } from 'broadcast-channel'
 import { BroadcastChannel, createLeaderElection } from 'broadcast-channel'
 import { Observable } from './observer'
-import type { PeerData } from './types'
+import type { PeerData } from './simple-peer'
 
 // eslint-disable-next-line ts/consistent-type-definitions
 type BCConnEvents = {

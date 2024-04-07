@@ -1,18 +1,4 @@
-import type {
-  SimplePeerData as PeerData,
-  Instance as PeerInstance,
-  Options as PeerOptions,
-  SignalData as PeerSignalData,
-  SimplePeer,
-} from 'simple-peer'
-
-export type {
-  PeerSignalData,
-  PeerInstance,
-  PeerOptions,
-  PeerData,
-  SimplePeer,
-}
+import type { PeerSignalData } from './simple-peer'
 
 export interface WSSubscribePayload {
   type: 'subscribe'

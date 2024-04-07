@@ -1,10 +1,7 @@
-// @ts-expect-error type error
-import _Peer from 'simple-peer/simplepeer.min.js'
-import type { PeerData, PeerInstance, PeerSignalData, SimplePeer } from './types'
 import type { Room } from './room'
 import { Observable } from './observer'
-
-const Peer = _Peer as SimplePeer
+import type { PeerData, PeerInstance, PeerSignalData } from './simple-peer'
+import { Peer } from './simple-peer'
 
 // eslint-disable-next-line ts/consistent-type-definitions
 type WebRTCCoonEvents = {

@@ -1,2 +1,2 @@
 export { MiniWebRTC } from './mini-webrtc'
-export { PeerData } from './types'
+export { PeerData } from './simple-peer'
