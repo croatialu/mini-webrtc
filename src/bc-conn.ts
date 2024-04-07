@@ -42,6 +42,8 @@ export class BCConn extends Observable<BCConnEvents> {
 
   async send(data: PeerData) {
     await this.#elector.hasLeader()
+
+    console.log('send data by bc', data)
     this.#channel.postMessage(
       data,
     )

@@ -45,10 +45,10 @@ export class WebRTCConn extends Observable<WebRTCCoonEvents> {
   }
 
   async send(data: PeerData) {
-    if (!this.connected)
-      throw new Error('Not connected')
-
-    this.peer.send(data)
+    try {
+      console.log('send data by p2p', { from: this.room.peerId, to: this.remotePeerId, data })
+      this.peer.send(data)
+    } catch {}
   }
 
   #handlePeerData = (data: PeerData) => {
@@ -79,7 +79,6 @@ export class WebRTCConn extends Observable<WebRTCCoonEvents> {
     this.emit('close')
 
     this.destroy()
-    this.room.webRTCConns.delete(this.remotePeerId)
   }
 
   destroy(): void {

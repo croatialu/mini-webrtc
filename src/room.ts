@@ -41,6 +41,7 @@ export class Room {
   }
 
   async send(data: any) {
+    console.log('before send data', data)
     if (await this.bcConn.isLeader()) {
       this.webRTCConns.forEach((webRTCConn) => {
         webRTCConn.send(data)
